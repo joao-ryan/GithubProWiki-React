@@ -1,3 +1,5 @@
+import { FaUser } from "react-icons/fa";
+
 export default function UserCard({ user }) {
   if (!user) return null;
 
@@ -7,7 +9,7 @@ export default function UserCard({ user }) {
 
   <div className="user-info">
     <h2>{user.name}</h2>
-    <p>{user.bio}</p>
+    <p><FaUser /> {user.bio}</p>
     <a href={user.html_url} target="_blank">Ver perfil</a>
   </div>
 </div>

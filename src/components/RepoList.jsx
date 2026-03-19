@@ -1,3 +1,5 @@
+import { FaBook } from "react-icons/fa";
+
 export default function RepoList({ repos }) {
   if (!repos.length) return null;
 
@@ -8,7 +10,7 @@ export default function RepoList({ repos }) {
         {repos.map((repo) => (
           <li key={repo.id}>
             <a href={repo.html_url} target="_blank">
-              {repo.name}
+              <FaBook /> {repo.name}
             </a>
           </li>
         ))}

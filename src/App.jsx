@@ -1,25 +1,28 @@
+import Header from "./components/Header";
+import Tabs from "./components/Tabs";
 import Search from "./components/Search";
 import UserCard from "./components/UserCard";
 import RepoList from "./components/RepoList";
 import { useGithub } from "./hooks/useGithub";
-import "./styles/global.css";
-
 
 function App() {
   const { user, repos, loading, error, fetchGithubData } = useGithub();
 
   return (
-    <div className="container">
-      <h1>GitFind PRO</h1>
+    <>
+      <Header />
 
-      <Search onSearch={fetchGithubData} />
+      <div className="container">
+        <Search onSearch={fetchGithubData} />
 
-      {loading && <p>Carregando...</p>}
-      {error && <p>{error}</p>}
+        {loading && <p>Carregando...</p>}
+        {error && <p>{error}</p>}
 
-      <UserCard user={user} />
-      <RepoList repos={repos} />
-    </div>
+        <UserCard user={user} />
+        <Tabs user={user} />
+        <RepoList repos={repos} />
+      </div>
+    </>
   );
 }
 

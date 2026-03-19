@@ -1,32 +1,32 @@
-/* RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY (igual GitHub) */
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  background-color: #0d1117;
   color: #c9d1d9;
+  background-color: #0d1117;
+  background-image: radial-gradient(#30363d 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-/* CONTAINER */
 .container {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
 }
 
-/* TÍTULO */
+
 h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 28px;
 }
 
-/* SEARCH BAR */
 .search-box {
   display: flex;
   gap: 10px;
@@ -47,7 +47,6 @@ input:focus {
   border-color: #58a6ff;
 }
 
-/* BOTÃO */
 button {
   background: #238636;
   border: 1px solid rgba(240, 246, 252, 0.1);
@@ -61,7 +60,7 @@ button:hover {
   background: #2ea043;
 }
 
-/* USER CARD (igual perfil GitHub) */
+
 .user-card {
   display: flex;
   align-items: center;
@@ -92,7 +91,7 @@ button:hover {
   text-decoration: none;
 }
 
-/* REPOSITÓRIOS (igual lista GitHub) */
+
 .repo-list {
   background: #161b22;
   border: 1px solid #30363d;
@@ -127,8 +126,49 @@ button:hover {
   text-decoration: underline;
 }
 
-/* LOADING / ERROR */
+
 p {
   text-align: center;
   margin: 10px 0;
+}
+
+.header {
+  background: #161b22;
+  padding: 12px 20px;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header input {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: white;
+}
+
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #30363d;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.tabs span {
+  cursor: pointer;
+  color: #8b949e;
+}
+
+.tabs span:hover {
+  color: #c9d1d9;
+}
+
+
+.repo-list li:hover {
+  background: #1c2128;
+  transition: 0.2s;
 }
