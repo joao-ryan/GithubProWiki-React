@@ -1,25 +1,24 @@
-import { useState } from "react";
 import Search from "./components/Search";
 import UserCard from "./components/UserCard";
-import { getUser } from "./services/api";
+import RepoList from "./components/RepoList";
+import { useGithub } from "./hooks/useGithub";
+import "./styles/global.css";
+
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  async function handleSearch(username) {
-    try {
-      const data = await getUser(username);
-      setUser(data);
-    } catch (error) {
-      alert(error.message);
-    }
-  }
+  const { user, repos, loading, error, fetchGithubData } = useGithub();
 
   return (
     <div>
       <h1>GitFind PRO</h1>
-      <Search onSearch={handleSearch} />
+
+      <Search onSearch={fetchGithubData} />
+
+      {loading && <p>Carregando...</p>}
+      {error && <p>{error}</p>}
+
       <UserCard user={user} />
+      <RepoList repos={repos} />
     </div>
   );
 }
