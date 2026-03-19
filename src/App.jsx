@@ -9,7 +9,7 @@ function App() {
   const { user, repos, loading, error, fetchGithubData } = useGithub();
 
   return (
-    <div>
+    <div className="container">
       <h1>GitFind PRO</h1>
 
       <Search onSearch={fetchGithubData} />

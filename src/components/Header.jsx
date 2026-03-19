@@ -1,8 +1,4 @@
-export default function UserCard({ user }) {
-  if (!user) return null;
-
-  return (
-  <div className="user-card">
+<div className="user-card">
   <img src={user.avatar_url} />
 
   <div className="user-info">
@@ -11,5 +7,5 @@ export default function UserCard({ user }) {
     <a href={user.html_url} target="_blank">Ver perfil</a>
   </div>
 </div>
-  );
-}
+
+export default UserCard;

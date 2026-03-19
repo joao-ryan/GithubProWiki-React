@@ -2,7 +2,7 @@ export default function RepoList({ repos }) {
   if (!repos.length) return null;
 
   return (
-    <div>
+    <div className="repo-list">
       <h3>Repositórios:</h3>
       <ul>
         {repos.map((repo) => (

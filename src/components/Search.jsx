@@ -9,7 +9,7 @@ export default function Search({ onSearch }) {
   }
 
   return (
-    <div>
+    <div className="search-box">
       <input
         placeholder="Digite usuário do GitHub"
         value={input}
